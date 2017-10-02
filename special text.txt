@@ -1,0 +1,27 @@
+Libariesiot
+Iot tweet
+Microgear
+DHT
+
+datasources["dashboard"]["/nuttapun/dht/dht"].split(",")[0]
+
+
+
+--------------------------------------------NetPie------------------------------------------------------------
+
+
+2.ในหน้า NETPIE Freeboard คลิกเพิ่ม Datasource ที่สร้างขึ้นก่อนหน้านี้เพื่อแก้ไข ตั้งชื่อ Datasource ใส่ค่า KEY และ SECRET และในช่อง SUBSCRIBED TOPICS 
+ให้ใส่ /pieled/state  หรือ Topic ที่ท่านระบุไว้สาหรับการ publish ในไฟล์ pieled2.ino ดังแสดงในภาพด้านล่าง และกด Save
+
+TOGGLE CAPTION : ตั้งชื่อปุ่ม Toggle (ในตัวอย่างตั้งเป็น PIE_LED)
+
+TOGGLE STATE : ใส่ข้อมูลตามชื่อของ Datasource และ Topic เช่น
+datasources["netpie_control"]["/PieSmartHome/pieled/state"]==1
+
+ON TEXT : ON
+
+OFF TEXT : OFF
+
+ONTOGGLEON ACTION : microgear['netpie_control'].chat('pieled','1')
+
+ONTOGGLEOFF ACTION : microgear['netpie_control'].chat('pieled','0')
